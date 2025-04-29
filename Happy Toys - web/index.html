@@ -11,8 +11,7 @@
     <header>
         <h1>🌈​Happy Toys</h1>
         <h2>Sua loja online de diversão! garanta diversas ofertas por um preso que cabe no bolso!</h2>
-        <h3> sua criança vai adorar</h3>
-        <button id="theme-toggle">Alternar Tema</button>
+        <h4> promoçao para as primeiras compras.</h4>
     </header>
     
     <nav>
@@ -26,17 +25,70 @@
     </nav>
     
     <main>
+        <!-- Preciso ver isso -->
         <section id="destaques">
             <h2>Produtos em Destaque</h2>
-            <div class="produto-destaque">
-                <img src="https://via.placeholder.com/300x200?text=Carrinho+de+Controle+Remoto" 
-                     alt="Carrinho de Controle Remoto" 
-                     title="Carrinho de Controle Remoto - R$199,90">
-                <p><span class="destaque">Carrinho de Controle Remoto</span> - Perfeito para crianças a partir de 6 anos.</p>
-                <button class="btn-comprar">Comprar</button>
+            <div class="carrossel-container">
+                <button class="carrossel-btn anterior" aria-label="Anterior">&#10094;</button>
+                <div class="carrossel">
+                    <!-- Item 1 -->
+                    <div class="carrossel-item">
+                        <img src="https://via.placeholder.com/300x200?text=Boneca+Bebê+Reborn" alt="Boneca Bebê Reborn">
+                        <div class="produto-info">
+                            <h3>Boneca Bebê Reborn</h3>
+                            <div class="preco">R$ 844 <span class="preco-antigo">R$ 889</span></div>
+                            <button class="btn-comprar">Comprar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 2 -->
+                    <div class="carrossel-item">
+                        <img src="https://via.placeholder.com/300x200?text=Carrinho+Controle+Remoto" alt="Carrinho Controle Remoto">
+                        <div class="produto-info">
+                            <h3>Carrinho Controle Remoto</h3>
+                            <div class="preco">R$ 199</div>
+                            <button class="btn-comprar">Comprar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 3 -->
+                    <div class="carrossel-item">
+                        <img src="https://via.placeholder.com/300x200?text=Kit+Lego+City" alt="Kit Lego City">
+                        <div class="produto-info">
+                            <h3>Kit Lego City</h3>
+                            <div class="preco">R$ 299 <span class="preco-antigo">R$ 399</span></div>
+                            <button class="btn-comprar">Comprar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 4 -->
+                    <div class="carrossel-item">
+                        <img src="https://via.placeholder.com/300x200?text=Quebra-Cabeça+500+Peças" alt="Quebra-Cabeça 500 Peças">
+                        <div class="produto-info">
+                            <h3>Quebra-Cabeça 500 Peças</h3>
+                            <div class="preco">R$ 59</div>
+                            <button class="btn-comprar">Comprar</button>
+                        </div>
+                    </div>
+                    
+                    <!-- Item 5 -->
+                    <div class="carrossel-item">
+                        <img src="https://via.placeholder.com/300x200?text=Boneca+Barbie+Moderna" alt="Boneca Barbie Moderna">
+                        <div class="produto-info">
+                            <h3>Barbie Moderna</h3>
+                            <div class="preco">R$ 99 <span class="preco-antigo">R$ 120</span></div>
+                            <button class="btn-comprar">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <button class="carrossel-btn proximo" aria-label="Próximo">&#10095;</button>
             </div>
+            
+            <div class="carrossel-indicadores"></div>
         </section>
-        
+
+        <!-- Categorias  -->
         <section id="categorias">
             <h3>Nossas Categorias</h3>
             <ul id="lista-categorias">
@@ -47,15 +99,17 @@
                 <li><a href="#lego">Blocos de Montar</a></li>
             </ul>
         </section>
+
+    
         <section id="bonecas" class="categoria-produtos">
             <h2>Bonecas em Destaque</h2>
             <div class="produtos-grid">
                 
                 <!-- Produto 1 -->
                 <div class="produto-card">
-                    <img src="https://via.placeholder.com/250x300?text=Bebê+Reborn+Macey" 
-                         alt="Bebê Reborn Macey" 
-                         class="produto-imagem">
+                    <img src="https://m.media-amazon.com/images/I/81g7HPD2HTL._AC_UF1000,1000_QL80_.jpg" 
+                        alt="Bebê Reborn Macey" 
+                        class="produto-imagem">
                     <div class="produto-info">
                         <h3>Bebê Reborn Macey</h3>
                         <div class="produto-precos">
@@ -69,9 +123,9 @@
                 
                 <!-- Produto 2 -->
                 <div class="produto-card">
-                    <img src="https://via.placeholder.com/250x300?text=Boneca+Bebê+Chorão" 
-                         alt="Boneca Bebê Chorão" 
-                         class="produto-imagem">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgsTprQydYlku4tQi6_z1yOvZFMg-xVfdKUtu5sPLVoBaKPQzT0cDs9FM5Dpob4gJaEBg&usqp=CAU" 
+                        alt="Boneca Bebê Chorão" 
+                        class="produto-imagem">
                     <div class="produto-info">
                         <h3>Boneca Bebê Chorão</h3>
                         <div class="produto-precos">
@@ -85,9 +139,9 @@
                 
                 <!-- Produto 3 -->
                 <div class="produto-card">
-                    <img src="https://via.placeholder.com/250x300?text=Boneca+de+Pano+Artisanal" 
-                         alt="Boneca de Pano Artesanal" 
-                         class="produto-imagem">
+                    <img src="https://i.pinimg.com/736x/6b/59/21/6b59216d75ce72a553471d2bd126b070.jpg" 
+                        alt="Boneca de Pano Artesanal" 
+                        class="produto-imagem">
                     <div class="produto-info">
                         <h3>Boneca de Pano Artesanal</h3>
                         <div class="produto-precos">
@@ -100,9 +154,8 @@
                 
                 <!-- Produto 4 -->
                 <div class="produto-card">
-                    <img src="https://photos.enjoei.com.br/bebe-reborn-realista-kit-macey-120965019/1200xN/czM6Ly9waG90b3MuZW5qb2VpLmNvbS5ici9wcm9kdWN0cy8yNzIzNzE4OC8wZmFkODgwNmIzMDc4ZTlhYzUyNDk0Nzc3ZjU5N2MwZC5qcGc" 
-                         alt="Barbie Moderna" 
-                         class="produto-imagem">
+                    <img src="https://photos.enjoei.com.br/bebe-reborn-realista-kit-macey-120965019/1200xN/czM6Ly9waG90b3MuZW5qb2VpLmNvbS5ici9wcm9kdWN0cy8yNzIzNzE4OC8wZmFkODgwNmIzMDc4ZTlhYzUyNDk0Nzc3ZjU5N2MwZC5qcGc" alt="Barbie Moderna" 
+                        class="produto-imagem">
                     <div class="produto-info">
                         <h3>Barbie Moderna</h3>
                         <div class="produto-precos">
@@ -113,42 +166,243 @@
                         <button class="btn-comprar">Comprar</button>
                     </div>
                 </div>
-                
-                <!-- Produto 5 -->
-                <div class="produto-card">
-                    <img src="https://via.placeholder.com/250x300?text=Boneca+Personalizada" 
-                         alt="Boneca Personalizada" 
-                         class="produto-imagem">
-                    <div class="produto-info">
-                        <h3>Boneca Personalizada</h3>
-                        <div class="produto-precos">
-                            <span class="preco-atual">R$ 200</span>
-                        </div>
-                        <span class="produto-marca">Sem Marca</span>
-                        <button class="btn-comprar">Comprar</button>
-                    </div>
-                </div>
-                <!-- Produto 6 -->
-                <div class="produto-card">
-                    <img src="https://via.placeholder.com/250x300?text=Boneca+Bebê+Realista" 
-                         alt="Boneca Bebê Realista" 
-                         class="produto-imagem">
-                    <div class="produto-info">
-                        <h3>Boneca Bebê Realista</h3>
-                        <div class="produto-precos">
-                            <span class="preco-atual">R$ 320</span>
-                            <span class="preco-antigo">R$ 350</span>
-                        </div>
-                        <span class="produto-marca">Reborn Dolls</span>
-                        <button class="btn-comprar">Comprar</button>
-                    </div>
                 </div>
             </div>
         </section>
-        <section id="carrinhos" class="categoria-produtos">
-            <h2>carrinhos em Destaque</h2>
-            <section class="produtos-grid">
-        </section>
+
+<!-- Seção Carrinhos -->
+<section id="carrinhos" class="categoria-produtos">
+    <h2>Carrinhos</h2>
+    <div class="produtos-grid">
+        <!-- Produto 1 -->
+        <div class="produto-card">
+            <img src="https://m.media-amazon.com/images/I/61RgzyBy6LL._AC_UF894,1000_QL80_.jpg" alt="Carrinho Controle Remoto">
+            <div class="produto-info">
+                <h3>Carrinho Controle Remoto</h3>
+                <div class="produto-precos">
+                    <span class="preco-atual">R$ 199,90</span>
+                </div>
+                <span class="produto-marca">ToyTech</span>
+                <button class="btn-comprar">Comprar</button>
+            </div>
+        </div>
+
+        <!-- Produto 2 -->
+        <div class="produto-card">
+            <img src="https://static.festapratica.com/public/festapraticabrinquedos/imagens/produtos/kit-carrinhos-hot-wheels-com-10-carrinhos-sortidos-mattel-6560d09954262.png" alt="Kit Hot Wheels">
+            <div class="produto-info">
+                <h3>Kit Hot Wheels</h3>
+                <div class="produto-precos">
+                    <span class="preco-atual">R$ 149,90</span>
+                    <span class="preco-antigo">R$ 179,90</span>
+                </div>
+                <span class="produto-marca">Mattel</span>
+                <button class="btn-comprar">Comprar</button>
+            </div>
+        </div>
+
+        <!-- Produto 3 -->
+        <div class="produto-card">
+            <img src="https://m.media-amazon.com/images/I/613+GHccOgL._AC_UF894,1000_QL80_.jpg" alt="Caminhão de Brinquedo">
+            <div class="produto-info">
+                <h3>Caminhão de Brinquedo</h3>
+                <div class="produto-precos">
+                    <span class="preco-atual">R$ 79,90</span>
+                </div>
+                <span class="produto-marca">ToyLand</span>
+                <button class="btn-comprar">Comprar</button>
+            </div>
+        </div>
+
+        <!-- Produto 4 -->
+        <div class="produto-card">
+            <img src="https://cdn.awsli.com.br/2500x2500/1312/1312517/produto/223835888e42ddf0225.jpg" alt="Carro de Fórmula 1">
+            <div class="produto-info">
+                <h3>Fórmula 1 Elétrico</h3>
+                <div class="produto-precos">
+                    <span class="preco-atual">R$ 1149,90</span>
+                </div>
+                <span class="produto-marca">SpeedRacer</span>
+                <button class="btn-comprar">Comprar</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Seção Jogos Educativos -->
+<section id="jogos" class="categoria-produtos">
+    <h2>Jogos Educativos</h2>
+    <div class="produtos-grid">
+        <!-- Produto 1 -->
+        <div class="produto-card">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7mxUEZRko6rDnrH1lLqag28ITRdaITxlA0A&s" alt="Quebra-Cabeça 100 Peças">
+            <div class="produto-info">
+                <h3>Quebra-Cabeça 100 Peças</h3>
+                <div class="produto-precos">
+                    <span class="preco-atual">R$ 59,90</span>
+                </div>
+                <span class="produto-marca">Educa</span>
+                <button class="btn-comprar">Comprar</button>
+            </div>
+        </div>
+
+        <!-- Produto 2 -->
+        <div class="produto-card">
+            <img src="https://m.media-amazon.com/images/I/61fAMalkwPL._AC_UF894,1000_QL80_.jpg" alt="Jogo da Memória">
+            <div class="produto-info">
+                <h3>Jogo da Memória</h3>
+                <div class="produto-precos">
+                    <span class="preco-atual">R$ 39,90</span>
+                </div>
+                <span class="produto-marca">Toyster</span>
+                <button class="btn-comprar">Comprar</button>
+            </div>
+        </div>
+
+        <!-- Produto 3 -->
+        <div class="produto-card">
+            <img src="https://rihappy.vtexassets.com/arquivos/ids/278709-800-auto?v=635472565012900000&width=800&height=auto&aspect=true" alt="Ábaco Infantil">
+            <div class="produto-info">
+                <h3>Ábaco Infantil</h3>
+                <div class="produto-precos">
+                    <span class="preco-atual">R$ 49,90</span>
+                </div>
+                <span class="produto-marca">Educativo</span>
+                <button class="btn-comprar">Comprar</button>
+            </div>
+        </div>
+
+        <!-- Produto 4 -->
+        <div class="produto-card">
+            <img src="https://cdn.awsli.com.br/800x800/1300/1300531/produto/64544305/b7573ae0cd.jpg" alt="Letras Magnéticas">
+            <div class="produto-info">
+                <h3>Letras Magnéticas</h3>
+                <div class="produto-precos">
+                    <span class="preco-atual">R$ 69,90</span>
+                </div>
+                <span class="produto-marca">Aprender Brincando</span>
+                <button class="btn-comprar">Comprar</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Seção Brinquedos de Pelúcia -->
+<section id="pelucia" class="categoria-produtos">
+    <h2>Brinquedos de Pelúcia</h2>
+    <div class="produtos-grid">
+        <!-- Produto 1 -->
+        <div class="produto-card">
+            <img src="https://images.tcdn.com.br/img/img_prod/482052/urso_de_pelucia_carinho_buba_5899_venda_unitaria_sortidos_21581_1_4849c0ad84baf7ddd7a0ca78a66e83a6.jpg" alt="Ursinho de Pelúcia">
+            <div class="produto-info">
+                <h3>Ursinho de Pelúcia</h3>
+                <div class="produto-precos">
+                    <span class="preco-atual">R$ 89,90</span>
+                </div>
+                <span class="produto-marca">Pelúcia Fofa</span>
+                <button class="btn-comprar">Comprar</button>
+            </div>
+        </div>
+
+        <!-- Produto 2 -->
+        <div class="produto-card">
+            <img src="https://cdn.awsli.com.br/600x1000/761/761999/produto/14111894969d1e4672d.jpg" alt="Coelho de Pelúcia">
+            <div class="produto-info">
+                <h3>Coelho de Pelúcia</h3>
+                <div class="produto-precos">
+                    <span class="preco-atual">R$ 79,90</span>
+                </div>
+                <span class="produto-marca">Bunny Love</span>
+                <button class="btn-comprar">Comprar</button>
+            </div>
+        </div>
+
+        <!-- Produto 3 -->
+        <div class="produto-card">
+            <img src="https://m.media-amazon.com/images/I/81zP1OhqJzL.jpg" alt="Dinossauro de Pelúcia">
+            <div class="produto-info">
+                <h3>Dinossauro de Pelúcia</h3>
+                <div class="produto-precos">
+                    <span class="preco-atual">R$ 99,90</span>
+                </div>
+                <span class="produto-marca">Dino Toys</span>
+                <button class="btn-comprar">Comprar</button>
+            </div>
+        </div>
+
+        <!-- Produto 4 -->
+        <div class="produto-card">
+            <img src="https://http2.mlstatic.com/D_851502-CBT72592650465_102023-O.jpg" alt="Cachorro de Pelúcia">
+            <div class="produto-info">
+                <h3>Cachorro de Pelúcia</h3>
+                <div class="produto-precos">
+                    <span class="preco-atual">R$ 69,90</span>
+                </div>
+                <span class="produto-marca">Pet Love</span>
+                <button class="btn-comprar">Comprar</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Seção Blocos de Montar -->
+<section id="lego" class="categoria-produtos">
+    <h2>Blocos de Montar</h2>
+    <div class="produtos-grid">
+        <!-- Produto 1 -->
+        <div class="produto-card">
+            <img src="https://m.media-amazon.com/images/I/91kydhD836L._AC_UF894,1000_QL80_.jpg" alt="Kit Lego Classic">
+            <div class="produto-info">
+                <h3>Kit Lego Classic</h3>
+                <div class="produto-precos">
+                    <span class="preco-atual">R$ 199,90</span>
+                </div>
+                <span class="produto-marca">LEGO</span>
+                <button class="btn-comprar">Comprar</button>
+            </div>
+        </div>
+
+        <!-- Produto 2 -->
+        <div class="produto-card">
+            <img src="https://images.tcdn.com.br/img/img_prod/577735/bloco_de_montar_magnetico_18972425_1_f633a815fa8415234cb477f7b43a68f6_20240619120831.jpg" alt="Blocos Magnéticos">
+            <div class="produto-info">
+                <h3>Blocos Magnéticos</h3>
+                <div class="produto-precos">
+                    <span class="preco-atual">R$ 159,90</span>
+                </div>
+                <span class="produto-marca">MagnaTiles</span>
+                <button class="btn-comprar">Comprar</button>
+            </div>
+        </div>
+
+        <!-- Produto 3 -->
+        <div class="produto-card">
+            <img src="https://m.media-amazon.com/images/I/81VXCGgTmUL.jpg" alt="Kit Lego City">
+            <div class="produto-info">
+                <h3>Kit Lego City</h3>
+                <div class="produto-precos">
+                    <span class="preco-atual">R$ 299,90</span>
+                    <span class="preco-antigo">R$ 349,90</span>
+                </div>
+                <span class="produto-marca">LEGO</span>
+                <button class="btn-comprar">Comprar</button>
+            </div>
+        </div>
+
+        <!-- Produto 4 -->
+        <div class="produto-card">
+            <img src="https://www.anneclairebaby.com/cdn/shop/products/71tXHg5H-KL._AC_SL1500.jpg?v=1604660067" alt="Blocos de Madeira">
+            <div class="produto-info">
+                <h3>Blocos de Madeira</h3>
+                <div class="produto-precos">
+                    <span class="preco-atual">R$ 89,90</span>
+                </div>
+                <span class="produto-marca">Eco Toys</span>
+                <button class="btn-comprar">Comprar</button>
+            </div>
+        </div>
+    </div>
+</section>
 
         <section id="promocoes">
             <h2>Promoções da Semana</h2>
@@ -170,7 +424,7 @@
                         <td>20%</td>
                     </tr>
                     <tr>
-                        <td>Kit Lego City</td>
+                        <td> Kit Lego City</td>
                         <td>R$ 399,90</td>
                         <td>R$ 299,90</td>
                         <td>25%</td>
@@ -187,7 +441,9 @@
                 </tfoot>
             </table>
         </section>
-        
+    
+
+        <!--sobre-->
         <section id="sobre">
             <h3>Sobre Nossa Loja</h3>
             <blockquote>
@@ -197,15 +453,22 @@
             <p><em>Desde 2010</em> no mercado, somos referência em vendas de brinquedos online, com mais de <strong>50.000 clientes satisfeitos</strong> em todo o Brasil.</p>
         </section>
         
-        <section class="video-container">
-            <h4>Como Funciona Nossa Loja</h4>
-            <video width="400" controls id="video-loja">
-                <source src="video-loja.mp4" type="video/mp4">
-                Seu navegador não suporta o elemento de vídeo.
-            </video>
-            <p>Assista ao vídeo e conheça nossa loja!</p>
-        </section>
-        
+    <h4>Como Funciona Nossa Loja</h4>
+    <div class="video-wrapper">
+        <iframe width="560" height="315" 
+                src="videobrinquedo.mp4"
+                scr="videobrinquedo.webm"
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+        </iframe>
+    </div>
+    <p>Assista ao vídeo e conheça nossa loja!</p>
+</section>
+
+
+        <!--sessao-->
         <section id="contato">
             <h5>Fale Conosco</h5>
             <form id="form-contato">
@@ -224,9 +487,9 @@
                 <button type="submit">Enviar</button>
             </form>
             <address>
-                Email: <a href="mailto:contato@brinquedosdivertidos.com.br">contato@brinquedosdivertidos.com.br</a><br>
-                Telefone: <a href="tel:+5511999999999">(11) 99999-9999</a><br>
-                Endereço: Rua dos Brinquedos, 123 - São Paulo/SP
+                Email: <a href="contato@HeppyToys.com.br">contato@brinquedosdivertidos.com.br</a><br>
+                Telefone: <a href="tel:+5511999999999">(81) 99999-9999</a><br>
+                Endereço: Rua dos Brinquedos, 123.8 - Recife/pe
             </address>
         </section>
     </main>

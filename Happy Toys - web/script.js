@@ -1,97 +1,195 @@
-//ps: foi feito pelo deepseek 
-// Função para alternar entre modo claro e escuro
-document.getElementById('theme-toggle').addEventListener('click', function() {
-  document.body.classList.toggle('dark-mode');
+// Configurações globais
+const CONFIG = {
+    carousel: {
+      autoPlay: true,
+      interval: 5000
+    }
+  };
   
-  // Salvar preferência no localStorage
-  const isDarkMode = document.body.classList.contains('dark-mode');
-  localStorage.setItem('darkMode', isDarkMode);
-});
-
-// Verificar preferência de tema ao carregar a página
-window.addEventListener('DOMContentLoaded', function() {
-  // Verificar tema salvo
-  const savedDarkMode = localStorage.getItem('darkMode') === 'true';
-  if (savedDarkMode) {
+  // Função principal quando o DOM estiver carregado
+  document.addEventListener('DOMContentLoaded', function() {
+    initTheme();
+    initDynamicContent();
+    initContactForm();
+    initProductInteractions();
+    initVideoControls();
+    initCategoryHover();
+    initCarousel();
+  });
+  
+  // Tema claro/escuro
+  function initTheme() {
+    const themeToggle = document.getElementById('theme-toggle');
+    if (!themeToggle) return;
+  
+    themeToggle.addEventListener('click', toggleTheme);
+    
+    // Aplicar tema salvo
+    if (localStorage.getItem('darkMode') === 'true') {
       document.body.classList.add('dark-mode');
+    }
   }
   
-  // Atualizar ano no footer
-  document.getElementById('ano-atual').textContent = new Date().getFullYear();
+  function toggleTheme() {
+    document.body.classList.toggle('dark-mode');
+    localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+  }
   
-  // Definir data de validade das promoções (7 dias a partir de hoje)
-  const validade = new Date();
-  validade.setDate(validade.getDate() + 7);
-  document.getElementById('data-validade').textContent = validade.toLocaleDateString('pt-BR');
+  // Conteúdo dinâmico
+  function initDynamicContent() {
+    // Ano atual no footer
+    const yearElement = document.getElementById('ano-atual');
+    if (yearElement) {
+      yearElement.textContent = new Date().getFullYear();
+    }
   
-  // Adicionar evento ao formulário de contato
-  document.getElementById('form-contato').addEventListener('submit', function(e) {
+    // Data de validade das promoções
+    const validityElement = document.getElementById('data-validade');
+    if (validityElement) {
+      const validityDate = new Date();
+      validityDate.setDate(validityDate.getDate() + 7);
+      validityElement.textContent = validityDate.toLocaleDateString('pt-BR');
+    }
+  }
+  
+  // Formulário de contato
+  function initContactForm() {
+    const form = document.getElementById('form-contato');
+    if (!form) return;
+  
+    form.addEventListener('submit', function(e) {
       e.preventDefault();
-      
-      // Simular envio do formulário
-      const nome = document.getElementById('nome').value;
-      alert(`Obrigado, ${nome}! Sua mensagem foi enviada com sucesso.`);
-      this.reset();
-  });
-  // Adicionar eventos aos botões de compra na seção de bonecas
-document.querySelectorAll('#bonecas .btn-comprar').forEach(btn => {
-  btn.addEventListener('click', function() {
-      const produtoNome = this.closest('.produto-card').querySelector('h3').textContent;
-      const preco = this.closest('.produto-card').querySelector('.preco-atual').textContent;
-      
-      alert(`Você adicionou ${produtoNome} no valor de ${preco} ao carrinho!`);
-      
-      // Aqui você poderia adicionar lógica para adicionar ao carrinho de compras
-  });
-});
-
-// Efeito de hover nos cards de produto
-document.querySelectorAll('.produto-card').forEach(card => {
-  card.addEventListener('mouseenter', function() {
-      this.style.transform = 'translateY(-5px)';
-  });
-  
-  card.addEventListener('mouseleave', function() {
-      this.style.transform = 'translateY(0)';
-  });
-});
-  
-  // Adicionar eventos aos botões de compra
-  const botoesCompra = document.querySelectorAll('.btn-comprar');
-  botoesCompra.forEach(botao => {
-      botao.addEventListener('click', function() {
-          const produto = this.parentElement.querySelector('.destaque').textContent;
-          alert(`Você adicionou ${produto} ao carrinho!`);
-      });
-  });
-  
-  // Simular carregamento de produtos (poderia ser uma API real)
-  setTimeout(() => {
-      console.log('Produtos carregados com sucesso!');
-  }, 1000);
-  
-  // Controle do vídeo
-  const video = document.getElementById('video-loja');
-  if (video) {
-      video.addEventListener('play', function() {
-          console.log('O vídeo começou a tocar');
-      });
-      
-      video.addEventListener('pause', function() {
-          console.log('O vídeo foi pausado');
-      });
+      const name = document.getElementById('nome').value;
+      alert(`Obrigado, ${name}! Sua mensagem foi enviada com sucesso.`);
+      form.reset();
+    });
   }
   
-  // Efeito de hover nas categorias
-  const categorias = document.querySelectorAll('#lista-categorias li');
-  categorias.forEach(categoria => {
-      categoria.addEventListener('mouseenter', function() {
-          this.style.transform = 'scale(1.05)';
-          this.style.transition = 'transform 0.3s';
+  // Interações com produtos
+  function initProductInteractions() {
+    // Botões de compra
+    document.querySelectorAll('.btn-comprar').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const productCard = this.closest('.produto-card, .carrossel-item');
+        const productName = productCard?.querySelector('h3')?.textContent;
+        const price = productCard?.querySelector('.preco-atual, .preco')?.textContent;
+        
+        if (productName && price) {
+          alert(`Você adicionou ${productName} (${price}) ao carrinho!`);
+          // Aqui você pode adicionar a lógica para o carrinho de compras
+        }
+      });
+    });
+  
+    // Efeito hover nos produtos
+    document.querySelectorAll('.produto-card').forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-5px)';
+        card.style.transition = 'transform 0.3s ease';
       });
       
-      categoria.addEventListener('mouseleave', function() {
-          this.style.transform = 'scale(1)';
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0)';
       });
-  });
-});
+    });
+  }
+  
+  // Controles de vídeo
+  function initVideoControls() {
+    const video = document.getElementById('video-loja');
+    if (!video) return;
+  
+    video.addEventListener('play', () => console.log('Vídeo iniciado'));
+    video.addEventListener('pause', () => console.log('Vídeo pausado'));
+  }
+  
+  // Efeito hover nas categorias
+  function initCategoryHover() {
+    document.querySelectorAll('#lista-categorias li').forEach(item => {
+      item.addEventListener('mouseenter', () => {
+        item.style.transform = 'scale(1.05)';
+        item.style.transition = 'transform 0.3s';
+      });
+      
+      item.addEventListener('mouseleave', () => {
+        item.style.transform = 'scale(1)';
+      });
+    });
+  }
+  
+  // Carrossel de produtos
+  function initCarousel() {
+    const carousel = document.querySelector('.carrossel');
+    if (!carousel) return;
+  
+    const items = document.querySelectorAll('.carrossel-item');
+    const prevBtn = document.querySelector('.carrossel-btn.anterior');
+    const nextBtn = document.querySelector('.carrossel-btn.proximo');
+    const dotsContainer = document.querySelector('.carrossel-indicadores');
+    
+    let currentIndex = 0;
+    let itemWidth = items[0].offsetWidth + 20; // Largura do item + gap
+    let autoplayInterval;
+  
+    // Criar indicadores
+    items.forEach((_, index) => {
+      const dot = document.createElement('div');
+      dot.classList.add('carrossel-indicador');
+      if (index === 0) dot.classList.add('ativo');
+      dot.addEventListener('click', () => goToSlide(index));
+      dotsContainer?.appendChild(dot);
+    });
+  
+    const dots = document.querySelectorAll('.carrossel-indicador');
+  
+    // Função para navegar entre slides
+    function goToSlide(index) {
+      currentIndex = (index + items.length) % items.length;
+      carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+      
+      // Atualizar indicadores
+      dots.forEach((dot, i) => {
+        dot.classList.toggle('ativo', i === currentIndex);
+      });
+    }
+  
+    // Eventos dos botões
+    prevBtn?.addEventListener('click', () => {
+      resetAutoplay();
+      goToSlide(currentIndex - 1);
+    });
+  
+    nextBtn?.addEventListener('click', () => {
+      resetAutoplay();
+      goToSlide(currentIndex + 1);
+    });
+  
+    // Iniciar autoplay
+    function startAutoplay() {
+      if (CONFIG.carousel.autoPlay) {
+        autoplayInterval = setInterval(() => {
+          goToSlide(currentIndex + 1);
+        }, CONFIG.carousel.interval);
+      }
+    }
+  
+    // Resetar autoplay
+    function resetAutoplay() {
+      clearInterval(autoplayInterval);
+      startAutoplay();
+    }
+  
+    // Pausar autoplay no hover
+    const container = document.querySelector('.carrossel-container');
+    container?.addEventListener('mouseenter', () => clearInterval(autoplayInterval));
+    container?.addEventListener('mouseleave', startAutoplay);
+  
+    // Atualizar ao redimensionar
+    window.addEventListener('resize', () => {
+      itemWidth = items[0].offsetWidth + 20;
+      carousel.style.transform = `translateX(-${currentIndex * itemWidth}px)`;
+    });
+  
+    // Iniciar
+    startAutoplay();
+  }
